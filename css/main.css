@@ -14,6 +14,7 @@ body{
   margin: 0;
   font-family: 'Noto Sans JP', sans-serif;
   transition-duration: 0.5s;
+  background-color: var(--lightGrey);
 }
 
 .header{
@@ -71,6 +72,7 @@ body{
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 5;
 }
 
 .vh{
@@ -79,9 +81,10 @@ body{
 
 .carroussel{
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   position: relative;
   overflow: hidden;
+  background-color: var(--contrast);
 }
 
 .dots-container
@@ -118,9 +121,6 @@ body{
   height: 100%;
   display: flex;
   flex-direction: row;
-}
-
-.tr{
   transition-duration: 0.5s;
 }
 
@@ -160,7 +160,7 @@ body{
   top: 0;
   left: 0;
   margin-left: 2em;
-  margin-top: 2em;
+  margin-top: 4em;
   height: fit-content;
 }
 
@@ -170,3 +170,95 @@ body{
   color: white;
   text-align: center;
 }
+
+section{
+  margin: 2em auto;
+  width: 75%;
+  min-height: 2em;
+}
+
+section .title{
+  margin-right: 4em;
+  color: var(--contrast);
+  text-decoration: underline;
+  text-decoration-color: var(--emo);
+  font-size: 2em;
+}
+
+.card-container{
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  padding-top: 0.5em;
+  width : 20vw;
+  height: 40vh;
+  background-color: white;
+  border-radius: 1em;
+  display: grid;
+  grid-template-rows: 40% 20% 40%;
+  transform-origin: top center;
+  transition-duration: 0.5s;
+  margin: 2em;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  0 12.5px 10px rgba(0, 0, 0, 0.035),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  0 100px 80px rgba(0, 0, 0, 0.07)
+}
+
+.card:hover{
+  transform: scale(1.1);
+}
+
+.card .img{
+  width: 100%;
+  height: 100%;
+}
+
+.card .img img{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 100%;
+  transition-duration: 0.5s;
+}
+
+
+
+.card:hover .img img{
+  transform: scale(1.2) translateX(25%) translateY(-25%);
+  
+  filter: drop-shadow(10px 50px 10px #46464669);
+}
+
+.card .title{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5;
+  text-decoration: none;
+}
+
+
+.card .comment{
+  padding: .5em;
+  display: flex;
+  align-items: center;
+  color: var(--lightContrast);
+  transition-duration: 0.5s;
+}
+.card:hover .comment{
+  color: black;
+}
+

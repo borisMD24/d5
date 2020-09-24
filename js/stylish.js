@@ -1,6 +1,6 @@
 let c = document.getElementById("container");
 let ca = document.getElementById("carroussel")
-
+turn();
 
 async function turn(){
   for(let i = 0; i < c.childElementCount; i++){
