@@ -1,0 +1,24 @@
+MSF
+
+top : 
+  header
+  sticky nav
+  -carroussel avec des images stylées
+
+couleurs : bleu ciel
+           main  : #17c0eb
+           light : #18dcff
+
+           rouge emo
+           main  : #EE0000
+           light : #ff4d4d
+
+           contrast
+           main  : #3d3d3d
+           light : #4b4b4b
+
+
+
+           a :
+              normal : #7efff5
+              hover  : 
