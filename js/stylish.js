@@ -1,27 +1,58 @@
-let c = document.getElementById("container");
-let ca = document.getElementById("carroussel")
-turn();
+const container = document.getElementById("container");
+const dc = document.getElementById("dc").children;
+bp = false;
+console.log(dc);
+let h = container.offsetHeight;
 
-async function turn(){
-  for(let i = 0; i < c.childElementCount; i++){
-    
-    await sleep(2000);
-    console.log(i + "childEle : " + c.childElementCount);
-    c.style.transform = `translateX(-${i*window.innerWidth}px)`;
-    if(i == c.childElementCount-1){
-      c.style.transitionDuration = "0s";
-      console.log("last");
-      
-    }
-    if(i == 1){
-      c.style.transitionDuration = "0.5s";
-    }
-    
 
-  }
-  turn();
+async function turn(k = 0){
+  let n = container.children.length;
+    for(let i = k; i < n; i++){
+      dc[i % (n-1)].classList.add("active");
+      dc[(n+i-2) % (n-1)].classList.remove("active");
+      if(i == 1){
+        container.style.transitionDuration = "0.5s";
+      }
+      container.style.transform = `translateY(-${h * i}px)`
+      if(i != n){
+        if(i == 0){
+          await sleep(2500);
+        }
+        else{
+          await sleep(3000);
+        }
+      }else{
+        await sleep(500);
+      }
+      if(bp==true){
+        bp = false;
+        console.log("stopped");
+        return;
+      }
+    }
+    container.style.transitionDuration = "0s";
+  turn()
 }
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+function sleep(ms){
+  return new Promise(r => setTimeout(r, ms));
+}
+
+let temp = function(e){return};
+
+async function breakP(i){
+  bp = true;
+  for(let j = 0; j < dc.length; j++){
+    dc[j].classList.remove("active");
+  }
+  turn(i);
+}
+
+
+for(let i = 0; i < dc.length; i++){
+  dc[i].addEventListener("click", function(){
+    if(dc[i].classList[1] != "active"){
+      breakP(i);
+    }
+  });
 }
