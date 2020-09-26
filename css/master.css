@@ -26,7 +26,6 @@ body{
 }
 
 .slide section{
-  display: block;
   top: 0px;
   left: 0px;
   width: 100%;
@@ -59,12 +58,13 @@ body{
 
 .slide section .img img{
   display: block;
-  max-width: 50%;
+  max-width: 75%;
   max-height: 75%;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .slide section .text{
@@ -127,4 +127,40 @@ body{
 .dot-container .active{
   width: 0.75em;
   height: 0.75em;
+}
+
+@media screen and (max-width: 800px) {
+  .slide section{
+    grid-template-columns: 100%;
+  }
+  .s1 .s3{
+    grid-template-rows: 30% 70%;
+  }
+  .slide section .text .title{
+    font-size: 2em;
+  }
+  
+  .slide section .text .body .content{
+    font-size: 1em;
+  }
+  .slide .dot-container{
+    bottom: unset;
+    left: unset;
+    border-radius: 0;
+    top: 30%;
+    right: 0%;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0);
+  }
+  .slide .dot-container .dot{
+    width: 0.7em;
+    height : 0.7em;
+  }
+
+  .slide .dot-container .active{
+    width: 1em;
+    height : 1em;
+  }
 }
