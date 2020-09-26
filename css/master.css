@@ -16,6 +16,7 @@ body{
   height: 80vh;
   overflow: hidden;
   position: relative;
+  z-index: 1;
 }
 
 .slide .container{
@@ -129,25 +130,74 @@ body{
   height: 0.75em;
 }
 
+.content-container{
+  width: 100%;
+  background-color: #222f3e;
+  z-index: 2;
+  overflow: hidden;
+}
+.content{
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  padding-top: 3em;
+  color: #dfe6e9;
+}
+
+.content .content-title{
+  margin-left: 3em;
+  font-size: 3em;
+  opacity: 0;
+  transform-origin: center center;
+  transform: scale(1.5);
+  transition-duration: 0.5s;
+  margin: 1em;
+}
+
+.content .content-title[data-in="in"]{
+  opacity: 1;
+  transform: scale(1);
+}
+.content .content-title[data-in="top"]{
+  opacity: 1;
+  transform: translateX(-100vw);
+
+}
+
+.content p{
+  opacity: 0;
+  transform-origin: center center;
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+}
+.content .p[data-in="in"]{
+  opacity: 1;
+  transform: scale(1);
+}
 @media screen and (max-width: 800px) {
   .slide section{
     grid-template-columns: 100%;
   }
-  .s1 .s3{
-    grid-template-rows: 30% 70%;
+  .s1, .s3{
+    grid-template-rows: 40% 60%;
   }
   .slide section .text .title{
     font-size: 2em;
   }
+
+  .s2, .s4{
+    grid-template-rows: 60% 40%;
+  }
   
   .slide section .text .body .content{
     font-size: 1em;
+    padding: 1em;
   }
   .slide .dot-container{
     bottom: unset;
     left: unset;
     border-radius: 0;
-    top: 30%;
+    top: 50%;
     right: 0%;
     flex-direction: column;
     align-items: center;
