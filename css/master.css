@@ -291,4 +291,17 @@ ul{
     width: 1em;
     height : 1em;
   }
+  .content .content-title{
+    display: block;
+    text-align: center;
+    margin: 1em auto;
+    font-size: 2em;
+  }
+  ul{
+    margin: unset;
+  }
+  .card{
+    width: 90%;
+    height: 90%;
+  }
 }
