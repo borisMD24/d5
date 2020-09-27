@@ -1,13 +1,13 @@
 const container = document.getElementById("container");
 const dc = document.getElementById("dc").children;
-bp = false;
+let bp = false;
 console.log(dc);
 let h = container.offsetHeight;
 
 
 async function turn(k = 0){
-  let n = container.children.length;
-    for(let i = k; i < n; i++){
+  let n = container.children.length; //nbr el enfant de container
+    for(let i = k; i < n; i++){ // tant qu'on a pas explore tous les enfants de container, on fait ca:
       dc[i % (n-1)].classList.add("active");
       dc[(n+i-2) % (n-1)].classList.remove("active");
       if(i == 1){
@@ -26,7 +26,6 @@ async function turn(k = 0){
       }
       if(bp==true){
         bp = false;
-        console.log("stopped");
         return;
       }
     }
@@ -56,4 +55,3 @@ for(let i = 0; i < dc.length; i++){
     }
   });
 }
-  

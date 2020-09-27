@@ -25,13 +25,15 @@ class Triggerer{
 
 
 
-let t = new Triggerer(70);
+let t = new Triggerer(75);
 
-let b = new Triggerer(30);
+let b = new Triggerer(25);
 
 let p = document.getElementsByClassName("p");
-
 let tt = document.getElementsByClassName("content-title");
+let li = document.getElementsByClassName("li");
+
+let ca = document.getElementsByClassName("card");
 
 window.addEventListener("scroll", function(e){
   for(let i = 0; i < p.length; i++){
@@ -40,5 +42,11 @@ window.addEventListener("scroll", function(e){
   for(let i = 0; i < tt.length; i++){
     t.toggle(tt[i]);
     b.out(tt[i])
+  }
+  for(let i = 0; i < li.length; i++){
+    t.toggle(li[i]);
+  }
+  for(let i = 0; i < ca.length; i++){
+    t.toggle(ca[i]);
   }
 })
