@@ -347,4 +347,11 @@ ul{
     width: 90%;
     height: 90%;
   }
+  .content-container .content .icon .ic{
+    font-size: 2em;
+  }
+  .content-container .content .icon .title{
+    margin: 1em 0;
+    font-size: 1.5em;
+  }
 }
