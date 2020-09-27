@@ -32,7 +32,7 @@ let b = new Triggerer(25);
 let p = document.getElementsByClassName("p");
 let tt = document.getElementsByClassName("content-title");
 let li = document.getElementsByClassName("li");
-
+let bar = document.getElementsByClassName("bar");
 let ca = document.getElementsByClassName("card");
 
 window.addEventListener("scroll", function(e){
@@ -45,8 +45,12 @@ window.addEventListener("scroll", function(e){
   }
   for(let i = 0; i < li.length; i++){
     t.toggle(li[i]);
+    b.out(li[i]);
   }
   for(let i = 0; i < ca.length; i++){
     t.toggle(ca[i]);
+  }
+  for(let i = 0; i < bar.length; i++){
+    t.toggle(bar[i]);
   }
 })

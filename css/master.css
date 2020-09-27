@@ -9,6 +9,7 @@ body{
   padding: 0;
   background-color: #222f3e;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .slide{
@@ -250,6 +251,48 @@ ul{
   align-items: center;
   justify-content: center;
   color: #222f3e;
+}
+
+.content-container .content .icon{
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  margin-top: 8em;
+}
+
+.content-container .content .icon .bar{
+  width: 100%;
+  height: 5px;
+  background-color: #fff;
+  opacity: 0;
+  transition-duration: 0.5s;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.content-container .content .icon .bar[data-in="in"]{
+  opacity: 1;
+}
+
+.content-container .content .icon .ic{
+  color: white;
+  font-size: 4em;
+  padding: unset;
+}
+
+.content-container .content .icon .title{
+  font-size: 2em;
+  color: white;
+}
+
+.content-container .content .icon .price{
+  font-size: 1.5em;
+  color: white;
+}
+
+.icon .price .dd{
+  color: #dfe6e9;
+  font-size: 1.2em;
 }
 
 @media screen and (max-width: 800px) {
